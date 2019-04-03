@@ -12,12 +12,12 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(
-    id: sequelize.INTEGER,
-    name: sequelize.STRING,
-    gender: sequelize.STRING,
-    age: sequelize.INTEGER,
-    weight: sequelize.INTEGER,
-    height: sequelize.INTEGER
+    id: config.INTEGER,
+    name: config.STRING,
+    gender: config.STRING,
+    age: config.INTEGER,
+    weight: config.INTEGER,
+    height: config.INTEGER
 
   );
 }
@@ -38,6 +38,7 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
+
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
