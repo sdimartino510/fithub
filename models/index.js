@@ -12,13 +12,10 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(
-    id: sequelize.INTEGER,
-    name: sequelize.STRING,
-    gender: sequelize.STRING,
-    age: sequelize.INTEGER,
-    weight: sequelize.INTEGER,
-    height: sequelize.INTEGER
-
+    config.database,
+    config.username,
+    config.password,
+    config
   );
 }
 
