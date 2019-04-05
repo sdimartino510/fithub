@@ -1,12 +1,8 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
-
 
 DROP DATABASE IF EXISTS fithub_db;
 CREATE DATABASE fithub_db;
+
+USE fithub_db;
 
 CREATE TABlE profile(
     id INTEGER(100) AUTO_INCREMENT NOT NULL,
@@ -16,4 +12,10 @@ CREATE TABlE profile(
     weight DECIMAL(10) NOT NULL,
     height DECIMAL(10) NOT NULL,
     PRIMARY KEY(id)
+);
+
+USE fithub_db;
+
+CREATE TABLE survey(
+    
 );
