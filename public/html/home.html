@@ -22,26 +22,26 @@
   <body>
     <div class="container">
       <div class="jumbotron bg-transparent">
-        <div class="start"> 
-        <a href="/add"
-          ><button class="btn bg-light"><span class=""></span>GET STARTED</button></a
-        >
-         <button class="btn bg-warning"><span class=""></span>LOGIN</button></a
-        >
-      </div>
+        <div class="start">
+          <a href="/add"
+            ><button class="btn bg-light">
+              <span class=""></span>GET STARTED
+            </button></a
+          >
+          <button class="btn bg-warning"><span class=""></span>LOGIN</button>
+        </div>
         <h1 id="logoType" class="text-center">FitHub</h1>
         <h3 id="logoTypeSmall" class="text-center">GET INTO SHAPE</h3>
         <div class="row">
-        <img id="mainBackground" class="col-lg-12" src="../styles/images/runninglady.jpg">
+          <img
+            id="mainBackground"
+            class="col-lg-12"
+            src="../styles/images/runninglady.jpg"
+          />
         </div>
-        
       </div>
       <div class="row">
-        <div class="col-lg-12">
-          
-          
-
-        </div>
+        <div class="col-lg-12"></div>
       </div>
     </div>
 
@@ -52,7 +52,16 @@
       </p>
     <![endif]-->
 
-    <script src="" async defer></script>
+    <script type="text/javascript">
+      var url =
+        "https://newsapi.org/v2/everything?apiKey=3d908a3f44bc48b0b577c71c0618319a&q=fitness&sortBy=publishedAt";
+
+      var req = new Request(url);
+
+      fetch(req).then(function(response) {
+        console.log(response.json());
+      });
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -69,6 +78,5 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    
   </body>
 </html>
