@@ -3,25 +3,25 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all fitness
   app.get("/api/fitness", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    db.fithub.findAll({}).then(function(dbfithub) {
+      res.json(dbfithub);
     });
   });
 
   // Create a new example
   app.post("/api/fitness", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    db.fithub.create(req.body).then(function(dbfithub) {
+      res.json(dbfithub);
     });
   });
 
-  // Delete an example by id
+  // Delete user by id
 
   app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
+    db.fithub.destroy({ where: { id: req.params.id } }).then(function(
+      dbfithub
+    ){
+      res.json(dbfithub);
     });
   });
 };
