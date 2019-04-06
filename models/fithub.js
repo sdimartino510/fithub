@@ -3,32 +3,28 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-   
+      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    
-    gender:{
-      type: DataTypes.TEXT,
-      
+
+    gender: {
+      type: DataTypes.TEXT
     },
-    age:{
+    age: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-
-    } ,
-    weight:{
+      allowNull: false
+    },
+    weight: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-  
-    } ,
-    height:{
+      allowNull: false
+    },
+    height: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-
-    } 
+      allowNull: false
+    }
   });
   return fithub;
 };
