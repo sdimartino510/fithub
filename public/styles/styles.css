@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+.jumbotron {
+  background-position: center;
+}
+
+.jumbotron2 {
+  background-image: url("https://cdn.pixabay.com/photo/2015/03/28/10/21/diet-695723_960_720.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+}
+>>>>>>> 748e3b5d6a00f7da3eaa8154df44abea64e537f3
 
 .list-group-item {
   line-height: 2.5;
@@ -10,31 +23,24 @@
   color: orangered;
 }
 
+
 #logoTypeSmall{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 8vh;
   font-weight: 600;
   color: white;
 }
-#logoTypeSmall{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 8vh;
-  font-weight: 600;
-  color: black;
-}
 
 .container{
   min-height: 99vh;
-    position: absolute;
-    top: 0px;
-    display: block;
-  
 }
 
 #mainBackground{
   min-width: 99%;
+  z-index: -1;
   position: absolute;
   top: 0px;
+  left: 0px;
 }
 
 .btn{
@@ -48,6 +54,16 @@
   top: 10px;
 }
 
+<<<<<<< HEAD
+=======
+.white{
+  color: white;
+}
+
+.addFont{
+  font-size: 30px;
+}
+>>>>>>> 748e3b5d6a00f7da3eaa8154df44abea64e537f3
 
 .navbar{
   position: static;
