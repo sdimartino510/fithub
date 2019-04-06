@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 .jumbotron {
   background-position: center;
 }
@@ -10,7 +8,6 @@
   background-size: cover;
   background-position: center;
 }
->>>>>>> 748e3b5d6a00f7da3eaa8154df44abea64e537f3
 
 .list-group-item {
   line-height: 2.5;
@@ -54,8 +51,6 @@
   top: 10px;
 }
 
-<<<<<<< HEAD
-=======
 .white{
   color: white;
 }
@@ -63,7 +58,6 @@
 .addFont{
   font-size: 30px;
 }
->>>>>>> 748e3b5d6a00f7da3eaa8154df44abea64e537f3
 
 .navbar{
   position: static;
