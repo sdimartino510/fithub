@@ -1,9 +1,12 @@
+<<<<<<< HEAD
+=======
 .jumbotron {
   background-image: url("https://arbordayblog.org/wp-content/uploads/2018/06/oak-tree-sunset-iStock-477164218-1080x608.jpg");
   background-repeat: no-repeat; 
   background-size: cover;
   background-position: center;
 }
+>>>>>>> 655f670509ec7b743c122a23f8e1172193cce3fb
 
 .list-group-item {
   line-height: 2.5;
@@ -16,24 +19,31 @@
   color: orangered;
 }
 
-
 #logoTypeSmall{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 8vh;
   font-weight: 600;
   color: white;
 }
+#logoTypeSmall{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8vh;
+  font-weight: 600;
+  color: black;
+}
 
 .container{
   min-height: 99vh;
+    position: absolute;
+    top: 0px;
+    display: block;
+  
 }
 
 #mainBackground{
   min-width: 99%;
-  z-index: -1;
   position: absolute;
   top: 0px;
-  left: 0px;
 }
 
 .btn{
@@ -45,4 +55,71 @@
   position: absolute;
   right: 18px;
   top: 10px;
+}
+
+
+
+.navbar{
+  position: static;
+  top: 0px;
+  
+  z-index: 2;
+}
+
+.profile{
+  display: inline;
+  position: absolute;
+  
+}
+
+.profileImg{
+  max-height: 50px;
+}
+
+.profileBg{
+  max-width: 99%;
+}
+
+.collapse{
+  min-height: 90vh;
+}
+
+.body-text{
+  color: black;
+}
+
+.navbar-collapse{
+  background-color: white;
+}
+
+.white{
+  color: black;
+}
+
+.mainContent{
+  top: 30vh;
+  position: absolute;
+}
+
+.start{
+  z-index: 2;
+}
+
+.forward{
+  z-index: 3;
+  position: absolute;
+}
+
+.carousel-inner{
+  height: 50%;
+  min-height: 50vh; 
+  position: absolute;
+  display:block;
+  opacity: .9;
+}
+
+.articles{
+  top: 50vh;
+  height: 50vh;
+  position: relative;
 }
