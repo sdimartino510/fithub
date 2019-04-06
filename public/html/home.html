@@ -46,17 +46,6 @@
       </p>
     <![endif]-->
 
-  <script type="text/javascript">
-    var url =
-      "https://newsapi.org/v2/everything?apiKey=3d908a3f44bc48b0b577c71c0618319a&q=exercise&q=diet&q=fitness&sources=medical-news-today";
-
-    var req = new Request(url);
-
-    fetch(req).then(function (response) {
-      console.log(response.json());
-    });
-  </script>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -69,7 +58,6 @@
 </body>
 
 </html>
-=======
   <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
@@ -135,9 +123,18 @@
   var url =
     "https://newsapi.org/v2/everything?apiKey=3d908a3f44bc48b0b577c71c0618319a&q=exercise&q=diet&q=fitness&sources=medical-news-today";
   var req = new Request(url);
-  fetch(req).then(function(response) {
-    console.log(response.json());
+  // fetch(url).then(function(response) {
+  //   console.log(response);
+  // });
+
+  fetch(url).then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
   });
+  
+  
 </script>
 <script>$('.carousel').carousel()
   </script>
