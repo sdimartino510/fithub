@@ -58,3 +58,72 @@
 .addFont{
   font-size: 30px;
 }
+
+.navbar{
+  position: static;
+  top: 0px;
+  
+  z-index: 2;
+}
+
+.profile{
+  display: inline;
+  position: absolute;
+  
+}
+
+.profileImg{
+  max-height: 50px;
+}
+
+.profileBg{
+  max-width: 99%;
+}
+
+.collapse{
+  min-height: 90vh;
+}
+
+.body-text{
+  color: black;
+}
+
+.navbar-collapse{
+  background-color: white;
+}
+
+.white{
+  color: black;
+}
+
+.mainContent{
+  top: 30vh;
+  position: absolute;
+}
+
+.start{
+  z-index: 2;
+}
+
+.forward{
+  z-index: 3;
+  position: absolute;
+}
+
+.carousel-inner{
+  height: 50%;
+  min-height: 50vh; 
+  position: absolute;
+  display:block;
+  opacity: .9;
+}
+
+.articles{
+  top: 50vh;
+  height: 50vh;
+  position: relative;
+}
+.test{
+  color:red;
+}
+
