@@ -26,6 +26,7 @@
   font-size: 8vh;
   font-weight: 600;
   color: white;
+  text-shadow: 2px 2px grey;
 }
 
 .container{
@@ -62,7 +63,6 @@
 .navbar{
   position: static;
   top: 0px;
-  
   z-index: 2;
 }
 
@@ -126,4 +126,8 @@
 
 .test{
   color:blue;
+}
+
+.white{
+  color: white;
 }
