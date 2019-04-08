@@ -31,7 +31,7 @@
         >
       </div>
 
-      <div class="forward offset-lg-3">
+      <div class="forward offset-lg-3 col-lg-6">
         <h1 id="logoType" class="text-center">FitHub</h1>
         <h3 id="logoTypeSmall" class="text-center">GET INTO SHAPE</h3>
       </div>
@@ -44,12 +44,7 @@
           <div class="col-lg-12">
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div  id="articles-section" class="carousel-inner">
-                  <div class="carousel-item active">
-                  <img class="col-lg-6 " src="../styles/images/runninglady.jpg" alt="First slide">
-                  <h4 class="col-lg-6.offset-lg-6 float-right white w-50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos id, natus voluptate suscipit est omnis illo eius sint sequi ratione, hic sunt obcaecati quidem aliquam quisquam inventore. Dolorem fuga nulla ab minima impedit fugit modi! Molestias ipsum consequatur est dolorum, molestiae omnis soluta nesciunt ea voluptas aliquam dolor commodi illo necessitatibus sint ipsam fugiat praesentium architecto maiores rerum. Quaerat temporibus velit explicabo accusantium corrupti assumenda earum nobis, quas necessitatibus possimus. Maxime ratione aperiam, culpa dolorum voluptatem labore? Quidem, sit quo!
-                  </h4>
-                </div>
+                 
                 </div>
 
                 
@@ -76,8 +71,16 @@
    })
   .then(function(myJson) {
     var data = myJson.articles
-    var articles = []    
-    for (let i = 0; i < data.length; i++) {
+    var articles = []
+    
+    var carouselInnerActive = $("<div class='carousel-item active row'>");
+        carouselInnerActive.append($('<img>').attr('src', data[0].urlToImage).addClass('col-lg-6'));          
+      carouselInnerActive.append($("<h4 class='col-lg-6.offset-lg-6 float-right white w-50'>").text("Author: " + data[0].author
+       + "Title: " + data[0].content
+       + data[0].description));
+      $("#articles-section").append(carouselInnerActive);
+
+    for (let i = 1; i < data.length; i++) {
       console.log(data[i]);
       var carouselInner = $("<div class='carousel-item row'>");
       carouselInner.append($('<img>').attr('src', data[i].urlToImage).addClass('col-lg-6'));          
