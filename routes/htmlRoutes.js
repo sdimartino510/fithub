@@ -18,14 +18,34 @@ module.exports = function(app) {
   app.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/profile.html"));
   });
+  app.get("/all-profiles", function(req, res){
+    db.Profile.findAll().then(function(dbProfile){
+      console.log(dbProfile);
+      var profileObject = {
+        allProfiles: dbProfile
+      }
+      return res.render("example", profileObject)
+    })
+  })
+  app.post("/profiles/create", function(req, res) {
+    db.Profile.create({
+      name: req.body.name,
+      age: req.body.age,
+      weight: req.body.weight,
+      height: req.body.height
+    }).then(function(dbProfile) {
+      console.log(dbProfile);
+      res.redirect("/example");
+    });
+  });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
+  app.get("/profile/:id", function(req, res) {
+    db.Profile.findOne({ where: { id: req.params.id } }).then(function(
+      dbProfile
     ) {
-      res.render("example", {
-        example: dbExample
+      res.render("Profile", {
+        Profile: dbProfile
       });
     });
   });

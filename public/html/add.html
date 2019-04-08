@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
   <title>start</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -15,7 +14,6 @@
     crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
 </head>
-
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand addFont" href="/home">FitHub</a>
@@ -28,7 +26,6 @@
   </br>
   </br>
     <div class="container">
-      
       <div class="row">
         <div class="col-md-6 col-lg-6">
           <h1 class="white display-4">Built for Fitness</h1>
@@ -59,7 +56,6 @@
             </div>
             <input id="height" type="text" class="form-control" placeholder="Height" aria-label="Height" aria-describedby="basic-addon1">
             </div>
-
                   <div class="row">
                     <div class="white col-lg-12">
                           <form>
@@ -81,7 +77,6 @@
                             </form>     
                     </div>
                   </div>
-
                   <div class="dropdown">
                       <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gender
@@ -95,17 +90,15 @@
                   </br>
                     <button type="button" id="signup" class="btn btn-success btn-lg btn-block">Next</button>
         </div>
-        <!--end of comment 2  -->
       </div>
     </div>
   </div>
 </body>
-
 <script>
   $("#signup").on("click", function(event) {
+  $("button").on("click", function(event) {
     event.preventDefault();
     alert("adding...");
-//        window.location.href = "/profile";
     var newSurvey = {
       water: $("#water")
         .val()
@@ -125,11 +118,8 @@
       gender: $("#gender[name=gender]:checked")
       .val()
       .trim(" "),
-
     };
     console.log(newSurvey);
- 
   });
 </script>
-
 </html>
