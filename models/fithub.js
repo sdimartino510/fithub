@@ -1,35 +1,57 @@
 module.exports = function(sequelize, DataTypes) {
-  var fithub = sequelize.define("fithub", {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-   
-    },
+  var Profile = sequelize.define("Profile", {
+    
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     
-    gender:{
-      type: DataTypes.TEXT,
-      
-    },
     age:{
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
 
     } ,
-    weight:{
+    weight: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
   
-    } ,
-    height:{
+    },
+    height: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
 
+    },
+    water_glasses: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+    },
+    exercise_days: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+    },
+    veggies: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+    },
+    fruits: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+    },
+    sleep_hours: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+    },
+
+    gender: {
+      type: DataTypes.TEXT
+      
     } 
+     
   });
-  return fithub;
+  return Profile;
 };
