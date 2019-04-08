@@ -56,6 +56,29 @@
                     </div>
                     <input type="text" class="form-control" placeholder="Height" aria-label="Height" aria-describedby="basic-addon1">
                   </div>
+
+                  <div class="row">
+                    <div class="white col-lg-12">
+                          <form>
+                              On average, how many glasses of water (around 8oz) do you drink per day?
+                              <input id="water" type="number" name="Water" min="1" max="16">
+                              <br>
+                              How many days per week do you get 30 minutes (or more) of exercise?
+                              <input id="exercise" type="number" name="Exercise" min="1" max="7">
+                              <br>
+                              How many days per week do you eat your daily dose of veggies (recommended 2.5 cups per day)?
+                              <input id="veggies" type="number" name="Veggies" min="1" max="7">
+                              <br>
+                              How many days per week do you eat your daily dose of fruit (recommended 2 cups per day)?
+                              <input id="fruit" type="number" min="1" name="Fruit" max="7">
+                              <br>
+                              On average, how many hours of sleep do you get per night?
+                              <input id="sleep" type="number" min="1" name="Sleep" max="12">
+                              <br>                 
+                            </form>     
+                    </div>
+                  </div>
+
                   <div class="dropdown">
                       <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gender
@@ -73,13 +96,33 @@
       </div>
     </div>
   </div>
-  <div class="jumbotron3 jumbotron-fluid">
-      <div class="jumbotron3 jumbotron-fluid">
-        </br>
-        </br>
-    <div class="container">
-    <div class="row">
-    <div class="col-md-6 col-lg-6">
 </body>
+
+<script>
+  $("#add-btn").on("click", function(event) {
+    event.preventDefault();
+    alert("adding...");
+//        window.location.href = "/profile";
+    var newSurvey = {
+      water: $("#water")
+        .val()
+        .trim(" "),
+      exercise: $("#exercise")
+        .val()
+        .trim(" "),
+      veggies: $("#veggies")
+        .val()
+        .trim(" "),
+      fruit: $("#fruit")
+        .val()
+        .trim(" "),
+      sleep: $("#sleep")
+        .val()
+        .trim(" ")
+    };
+    console.log(newSurvey);
+
+  });
+</script>
 
 </html>
