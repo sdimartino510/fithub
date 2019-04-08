@@ -1,33 +1,31 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="add-Profile">
+    <form class="create-form">   
+         <div class="col-md-6 col-lg-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Age" aria-label="Age" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Height" aria-label="Height" aria-describedby="basic-addon1">
+                  </div>          
+        <input id="new-Profile" type="text" placeholder="Enter new Profile">
+        <button type="submit" id="submit-Profile">Submit New Profile</button>
+    </form>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
