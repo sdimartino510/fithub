@@ -36,29 +36,29 @@
         </div>
         <div class="col-md-6 col-lg-6">
             <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"></span>
-                </div>
-                <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"></span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Age" aria-label="Age" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon1">
-                  </div>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Height" aria-label="Height" aria-describedby="basic-addon1">
-                  </div>
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input id="age" type="text" class="form-control" placeholder="Age" aria-label="Age" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input id="Weight" type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input id="height" type="text" class="form-control" placeholder="Height" aria-label="Height" aria-describedby="basic-addon1">
+            </div>
 
                   <div class="row">
                     <div class="white col-lg-12">
@@ -83,17 +83,17 @@
                   </div>
 
                   <div class="dropdown">
-                      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gender
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Male</a>
-                        <a class="dropdown-item" href="#">Female</a>
-                        <a class="dropdown-item" href="#">Other</a>
-                      </div>
+                          <input class="dropdown=item" id="gender" name="gender" type="radio" value="Male">Male
+                          <input class="dropdown=item" id="gender" name="gender" type="radio" value="Female">Female
+                          <input class="dropdown=item" id="gender" name="gender" type="radio" value="Other">Other
+                        </div>
                     </div>
                   </br>
-                    <button type="button" class="btn btn-success btn-lg btn-block">Next</button>
+                    <button type="button" id="signup" class="btn btn-success btn-lg btn-block">Next</button>
         </div>
         <!--end of comment 2  -->
       </div>
@@ -102,7 +102,7 @@
 </body>
 
 <script>
-  $("#add-btn").on("click", function(event) {
+  $("#signup").on("click", function(event) {
     event.preventDefault();
     alert("adding...");
 //        window.location.href = "/profile";
@@ -121,10 +121,14 @@
         .trim(" "),
       sleep: $("#sleep")
         .val()
-        .trim(" ")
+        .trim(" "),
+      gender: $("#gender[name=gender]:checked")
+      .val()
+      .trim(" "),
+
     };
     console.log(newSurvey);
-
+ 
   });
 </script>
 
