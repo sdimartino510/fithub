@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand addFont" href="/">FitHub</a>
+  </div>
+</nav>
+<div class="row">
+  <img id="mainBackground" class="col-lg-12" src="../styles/images/Diet.jpg">
+</div>
+<div class="jumbotron2 jumbotron-fluid">
+  </br>
+  </br>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-lg-6">
+        <h1 class="white display-4">Built for Fitness</h1>
+        <p class="white addFont lead">FitHub is a questionnaire platform inspired by the way you live.</p>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+          </div>
+          <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+          </div>
+          <input id="age" type="text" class="form-control" placeholder="Age" aria-label="Age" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+          </div>
+          <input id="weight" type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"></span>
+          </div>
+          <input id="height" type="text" class="form-control" placeholder="Height" aria-label="Height" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="row">
+          <div class="white col-lg-12">
+            <form>
+              On average, how many glasses of water (around 8oz) do you drink per day?
+              <input id="water" type="number" name="Water" min="1" max="16">
+              <br>
+              How many days per week do you get 30 minutes (or more) of exercise?
+              <input id="exercise" type="number" name="Exercise" min="1" max="7">
+              <br>
+              How many days per week do you eat your daily dose of veggies (recommended 2.5 cups per day)?
+              <input id="veggies" type="number" name="Veggies" min="1" max="7">
+              <br>
+              How many days per week do you eat your daily dose of fruit (recommended 2 cups per day)?
+              <input id="fruit" type="number" min="1" name="Fruit" max="7">
+              <br>
+              On average, how many hours of sleep do you get per night?
+              <input id="sleep" type="number" min="1" name="Sleep" max="12">
+              <br>
+            </form>
+          </div>
+        </div>
+        <div>
+          <span>
+            <p class="white">What is your gender?</p>
+            <select id="gender">
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">other</option>
+            </select>
+          </span>
+
+        </div>
+        </br>
+        <button id="submit-Profile" type="button" class="btn btn-success btn-lg btn-block">Next</button>
+      </div>
+      <!--end of comment 2  -->
+    </div>
+  </div>
+</div>
+
+{{!-- <div class="profile-info">
+  {{#each allProfiles}}
+  <p>{{this.name}}</p>
+  <p>{{this.age}}</p>
+  <p>{{this.weight}}</p>
+  <p>{{this.height}}</p>
+  {{/each}}
+</div> --}}
+
+
+
+<script>
+
+  $("#submit-Profile").on("click", function (event) {
+    event.preventDefault();
+    var newName = $("#name").val().trim();
+    var newAge = $("#age").val().trim();
+    var newWeight = $("#weight").val().trim();
+    var newHeight = $("#height").val().trim();
+    var newWater = $("#water").val().trim();
+    var newExercise = $("#exercise").val().trim();
+    var newVeggies = $("#veggies").val().trim();
+    var newFruit = $("#fruit").val().trim();
+    var newSleep = $("#sleep").val().trim();
+    var newGender = $('#gender option:selected').text();
+
+    $.ajax("/profiles/create", {
+      type: "POST",
+      data: {
+        name: newName,
+        age: newAge,
+        weight: newWeight,
+        height: newHeight,
+        water_glasses: newWater,
+        exercise_days: newExercise,
+        veggies: newVeggies,
+        fruits: newFruit,
+        sleep_hours: newSleep,
+        gender: newGender
+      }
+    }).then(function () {
+      alert("Adding new user");
+      location.reload()
+    })
+  })
+
+</script>

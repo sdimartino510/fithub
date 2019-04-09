@@ -1,41 +1,48 @@
 var db = require("../models");
-var path = require("path");
 
 module.exports = function(app) {
-  // Load index page
+  
   app.get("/", function(req, res) {
-    res.redirect("/home");
-  });
-
-  app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/home.html"));
+    res.render("index");
   });
 
   app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/add.html"));
+    res.render("add");
   });
 
   app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/profile.html"));
+    res.render("profile");
   });
+
+  app.get("/survey", function(res, res) {
+    res.render("survey");
+  });
+
   app.get("/all-profiles", function(req, res){
     db.Profile.findAll().then(function(dbProfile){
-      console.log(dbProfile);
+      console.log("All profiles: " + dbProfile);
       var profileObject = {
         allProfiles: dbProfile
       }
-      return res.render("example", profileObject)
+      return res.render("add", profileObject)
     })
   })
+
   app.post("/profiles/create", function(req, res) {
     db.Profile.create({
       name: req.body.name,
       age: req.body.age,
       weight: req.body.weight,
-      height: req.body.height
+      height: req.body.height,
+      water_glasses: req.body.water_glasses,
+      exercise_days: req.body.exercise_days,
+      veggies: req.body.veggies,
+      fruits: req.body.fruits,
+      sleep_hours: req.body.sleep_hours,
+      gender: req.body.gender
     }).then(function(dbProfile) {
       console.log(dbProfile);
-      res.redirect("/example");
+      res.redirect("/add");
     });
   });
 
