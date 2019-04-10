@@ -116,6 +116,7 @@
   position: absolute;
   display:block;
   opacity: .9;
+  top: -40vh;
 }
 
 .articles{
