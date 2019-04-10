@@ -95,6 +95,8 @@
 <script>
 
   $("#submit-Profile").on("click", function (event) {
+    alert("Adding to Profile")
+    window.location.href='/profile';
     event.preventDefault();
     var newName = $("#name").val().trim();
     var newAge = $("#age").val().trim();

@@ -6,8 +6,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -27,7 +25,7 @@
   <div class="jumbotron2 jumbotron-fluid">
   </br>
   </br>
-    <div class="container" id="userInfo">
+    <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-6">
           <h1 class="white display-4">Built for Fitness</h1>
@@ -50,7 +48,7 @@
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"></span>
             </div>
-            <input id="weight" type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon1">
+            <input id="Weight" type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -60,7 +58,7 @@
             </div>
                   <div class="row">
                     <div class="white col-lg-12">
-                          <form id="#userInfo">
+                          <form>
                               On average, how many glasses of water (around 8oz) do you drink per day?
                               <input id="water" type="number" name="Water" min="1" max="16">
                               <br>
@@ -76,50 +74,108 @@
                               On average, how many hours of sleep do you get per night?
                               <input id="sleep" type="number" min="1" name="Sleep" max="12">
                               <br>                 
-                              <div class="dropdown">
-                                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Gender
-                                  </button>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <input class="dropdown=item" id="gender" name="gender" type="radio" value="Male">Male
-                                      <input class="dropdown=item" id="gender" name="gender" type="radio" value="Female">Female
-                                      <input class="dropdown=item" id="gender" name="gender" type="radio" value="Other">Other
-                                    </div>
-                                </div>
-                              </br>
-                  <!-- Button trigger modal -->
-                  <button  id= "signUp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-                      Sign Up
-                </button>
                             </form>     
                     </div>
                   </div>
-                          <!-- Modal -->
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalScrollableTitle">Here are some health tips based on your response!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body" id="results">
-                  <div></div>  
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="save">Save to Profile</button>
-                </div>
-              </div>
-            </div>
-          </div> 
-             
+                  <div class="dropdown">
+                      <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gender
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <input class="dropdown=item" id="gender" name="gender" type="radio" value="Male">Male
+                          <input class="dropdown=item" id="gender" name="gender" type="radio" value="Female">Female
+                          <input class="dropdown=item" id="gender" name="gender" type="radio" value="Other">Other
+                        </div>
+                    </div>
+                  </br>
+                    <button type="button" id="signup" class="btn btn-success btn-lg btn-block">Next</button>
         </div>
       </div>
     </div>
   </div>
 </body>
-
-<script src="../js/add.js"></script>
+<script>
+  $("#signup").click( function(event) {
+    event.preventDefault();
+    alert("adding...");
+    var newSurvey = {
+      water: $("#water")
+        .val()
+        .trim(" "),
+      exercise: $("#exercise")
+        .val()
+        .trim(" "),
+      veggies: $("#veggies")
+        .val()
+        .trim(" "),
+      fruit: $("#fruit")
+        .val()
+        .trim(" "),
+      sleep: $("#sleep")
+        .val()
+        .trim(" "),
+      gender: $("#gender[name=gender]:checked")
+      .val()
+      
+    };
+    console.log(newSurvey);
+    var results= [];
+    var waterResult;
+    var exerciseResult;
+    var veggieResult;
+    var fruitResult;
+    var sleepResult;
+          function waterResponse(){
+          if (newSurvey.water < 4){
+            console.log("bad habit");
+            waterResult ="You may need to consume more water! An adequate daily fluid intake is: About 15.5 cups (3.7 liters) of fluids for men or About 11.5 cups (2.7 liters) of fluids a day for women. About 20 percent of daily fluid intake usually comes from food and the rest from drinks."}
+          else {
+            waterResult = "You've been staying hydrated!"};
+          }
+          waterResponse();
+          console.log(waterResult);
+          results.push(waterResult);
+          console.log(results);
+          function exerciseResponse(){
+          if (newSurvey.exercise < 3){
+            console.log("bad habit");
+            exerciseResult="You may need to stay more active! Get at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity a week, or a combination of moderate and vigorous activity."}
+          else {
+            exerciseResult= "You've been staying active!"};
+          }
+          exerciseResponse();
+          results.append(exerciseResult);
+          function veggieResponse(){
+          if (newSurvey.veggie < 7){
+            console.log("bad habit");
+            veggieResult = "You need to eat more veggie! The amount of vegetables you should aim for if you're a woman is at least 2 1/2 cups each day and at least 3 cups if you're a man. Shoot for even more if you work out or are physically active for a half hour or more each day!"}
+          else {
+            vegggieResult = "You've been eating enough of veggie! Keep up with your good diet!"};
+          }
+          veggieResponse();
+          results.append(veggieResult);
+    
+          function fruitResponse(){
+          if (newSurvey.fruit < 7){
+            console.log("bad habit");
+            fruitResult = "You need to eat more veggie! Depending on their age and sex federal guidelines recommend that adults eat at least 1½ to 2 cups per day of fruit and 2 to 3 cups per day of vegetables as part of a healthy eating pattern."}
+          else {
+            fruitResult = "You've been eating enough of fruit! Keep up with your good diet!"};
+          }
+          fruitResponse();
+          results.append(fruitResult);
+    
+          function sleepResponse(){
+          if (newSurvey.sleep < 7){
+            console.log("bad habit");
+            sleepResult= "You are not resting enough! Teenagers (14-17): Sleep range widened by one hour to 8-10 hours (previously it was 8.5-9.5) Younger adults (18-25): Sleep range is 7-9 hours (new age category) Adults (26-64): Sleep range did not change and remains 7-9 hours. "}
+          else if (newSurvey.sleep >9){
+            sleepResult="You are not resting too much! Teenagers (14-17): Sleep range widened by one hour to 8-10 hours (previously it was 8.5-9.5) Younger adults (18-25): Sleep range is 7-9 hours (new age category) Adults (26-64): Sleep range did not change and remains 7-9 hours. "}
+          };
+          sleepResponse();
+          results.append(sleepResult);
+          console.log(results);
+  });
+</script>
 </html>
+
